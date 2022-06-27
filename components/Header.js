@@ -247,15 +247,32 @@ const Header = (props) => {
 						</TouchableOpacity>
 					) : null} */}
 
-					{typeof props.addAction !== "undefined" ? (
+							{typeof props.addAction !== "undefined" ? (
+					 
 						<TouchableOpacity
 							activeOpacity={0.5}
 							onPress={props.addAction}
 							style={{ padding: 5 }}
 						>
 							<AntDesign name="pluscircleo" size={20} color={Colors.white} />
-						</TouchableOpacity>
-					) : null}
+								</TouchableOpacity>
+
+								
+								
+							) : null}
+							{typeof props.editAction !== "undefined" ? (
+					 
+					 <TouchableOpacity
+						 activeOpacity={0.5}
+						 onPress={props.editAction}
+						 style={{ padding: 5 }}
+					 >
+						 <AntDesign name="edit" size={20} color={Colors.white} />
+							 </TouchableOpacity>
+
+							 
+							 
+						 ) : null}
 					{typeof props.sortAction !== "undefined" ? (
 						<TouchableOpacity
 							activeOpacity={0.5}

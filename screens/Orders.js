@@ -15,6 +15,7 @@ import EmptyScreen from "../components/EmptyScreen";
 import { GetOrders } from "../services/OrderService";
 import ShowMoreLess from "../components/ShowMoreLess";
 import { showDateAsClientWant, showTimeAsClientWant } from "../utils/Util";
+import colors from "../config/colors";
 
 export default class Orders extends React.Component {
 	
@@ -74,7 +75,7 @@ export default class Orders extends React.Component {
 				onPress={() => this.gotoManageOrder(item)}
 			>
 				<Text style={styles.desc}>{"Order#: " + item.order_id}</Text>
-				<Text style={styles.desc}>{"Event Date: "} {showDateAsClientWant(item.event_date)}</Text>
+				<Text style={[styles.desc]}>{"Event Date: "} {showDateAsClientWant(item.event_date)}</Text>
 				<Text style={styles.desc}>{"Venue: " + item.venue}</Text>
 				<Text style={styles.desc}>{"Setup by: " + showTimeAsClientWant(item.setup_by)}</Text>
 				<Text style={styles.desc}>

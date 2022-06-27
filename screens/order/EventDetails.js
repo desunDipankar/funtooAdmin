@@ -60,11 +60,11 @@ export default class EventDetails extends Component {
 						<View style={styles.container}>
 							{/* <ScrollView> */}
 								<View style={styles.rowContainer}>
-									<View style={styles.row}>
-										<View style={[styles.rowLeft, { borderTopLeftRadius: 5 }]}>
+									<View style={[styles.row , {}]}>
+										<View style={[styles.rowLeft, {}]}>
 											<Text style={styles.inputLable}>Event Start:</Text>
 										</View>
-										  <View style={[styles.rowRight, { borderTopRightRadius: 5, }]}>
+										  <View style={[styles.rowRight, { }]}>
 											<View style={{ width: "55%" }}>
 												<TouchableOpacity
 													activeOpacity={1}
@@ -72,7 +72,7 @@ export default class EventDetails extends Component {
 													<Text style={styles.location}>{showDateAsClientWant(this.state.eventDetails?.event_date)}</Text>
 												</TouchableOpacity>
 											</View>
-											<View style={styles.divider}></View>
+											<View style={[styles.divider,{marginLeft:14}]}></View>
 											<View style={{ width: "45%", borderTopRightRadius: 5, }}>
 												<TouchableOpacity
 													activeOpacity={1}
@@ -95,7 +95,7 @@ export default class EventDetails extends Component {
 													<Text style={styles.location}>{showDateAsClientWant(this.state.eventDetails?.event_date)}</Text>
 												</TouchableOpacity>
 											</View>
-											<View style={styles.divider}></View>
+											<View style={[styles.divider ,{marginLeft:14}]}></View>
 											<View style={{ width: "45%" }}>
 												<TouchableOpacity
 													activeOpacity={1}
@@ -119,7 +119,7 @@ export default class EventDetails extends Component {
 												
 												</TouchableOpacity>
 											</View>
-											<View style={styles.divider}></View>
+											<View style={[styles.divider , {marginLeft:14}]}></View>
 											<View style={{ width: "45%" }}>
 												<TouchableOpacity
 													activeOpacity={1}
@@ -160,7 +160,7 @@ export default class EventDetails extends Component {
 										<View style={styles.rowLeft}>
 											<Text style={styles.inputLable}>Event Type:</Text>
 										</View>
-										<View style={styles.rowRight}>
+										<View style={[styles.rowRight , {marginLeft:19}]}>
 											<TouchableOpacity
 												activeOpacity={1}
 												style={{ paddingRight: 0, paddingVertical: 4, paddingLeft: 10, width: "100%" }} >
@@ -202,7 +202,7 @@ export default class EventDetails extends Component {
 										<View style={styles.rowLeft}>
 											<Text style={styles.inputLable}>Google Location:</Text>
 										</View>
-										<View style={styles.rowRight}>
+										<View style={[styles.rowRight , {marginLeft:19}]}>
 											<TouchableOpacity
 												activeOpacity={1}
 												style={{ paddingRight: 0, paddingVertical: 4, paddingLeft: 10, width: "100%" }} >
@@ -282,7 +282,6 @@ export default class EventDetails extends Component {
 											<Text style={{ fontSize: 9, paddingTop: Platform.OS == 'ios' ? 1 : 1.8, color: Colors.black, opacity: 0.6 }}>{"00"}</Text>
 										</View>
 									</View>
-
 
 									{
 										this.state.transport_price > 0 ?
@@ -370,6 +369,7 @@ const styles = StyleSheet.create({
 	row: {
 		marginTop: 0,
 		flexDirection: 'row',
+		justifyContent:'space-between',
 		marginBottom: 0,
 		borderBottomWidth: 1.5,
 		borderBottomColor: '#cfcfcf'
@@ -379,9 +379,10 @@ const styles = StyleSheet.create({
 		marginTop: 0,
 		flexDirection: 'row',
 		marginBottom: 0,
+		// backgroundColor:'red'
 	},
 	rowLeft: {
-		width: '47%',
+		width: '34%',
 		backgroundColor: '#fff',
 		paddingLeft: 0,
 		paddingVertical: 10,
@@ -393,11 +394,13 @@ const styles = StyleSheet.create({
 
 	rowRight: {
 		flexDirection: "row",
-		width: '53%',
+		width: '60%',
+		justifyContent: 'center',
+		alignItems:'center',
 		marginLeft: 0,
 		backgroundColor: '#fff',
 		marginTop: 0,
-		justifyContent: 'space-evenly',
+		justifyContent:'space-between',
 	},
 	activeTab: {
 		backgroundColor: Colors.primary,
@@ -501,11 +504,12 @@ const styles = StyleSheet.create({
 		opacity: 0.8
 	},
 	divider: {
-		width: "2%",
+		width: "3%",
 		borderLeftWidth: 0.3,
 		alignSelf: 'center',
 		height: 20,
 		borderLeftColor: '#444',
-		opacity: 0.4
+		opacity: 0.4,
+		paddingLeft:0
 	}
 });

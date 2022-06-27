@@ -59,6 +59,7 @@ export default class EditGame extends React.Component {
 	}
 
 	componentDidMount = () => {
+		console.log( 'id game?<<<<<>>>>>>>>>>>>>>',this.state.id , this.state.categoryID)
 		this.getCategorys();
 		this.PriorityList();
 	}

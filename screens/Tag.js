@@ -47,7 +47,7 @@ export default class Tag extends Component {
 	render = () => {
 		return (
 			<SafeAreaView style={styles.container}>
-				<Header title="" addAction={this.gotoAddGame} />
+				<Header title="Tag" addAction={this.gotoAddGame} />
 
 					{this.state.isLoading ? <Loader />
 						:
@@ -63,8 +63,7 @@ export default class Tag extends Component {
 											(this.state.tagList.map((item) => {
 												return (
 													<>
-
-														<TouchableOpacity
+														<TouchableOpacity 
 															key={item.id}
 															onPress={this.toggleTab.bind(this, item)}
 														>

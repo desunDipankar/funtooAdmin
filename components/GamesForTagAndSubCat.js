@@ -157,7 +157,7 @@ class GamesForTagAndSubCat extends Component {
                                                 <Carousel
                                                     renderItem={this.renderItem}
                                                     data={this.state.games}
-                                                />
+                                                 />
                                             </View>
 
                                             <View style={styles.box} >
@@ -167,6 +167,9 @@ class GamesForTagAndSubCat extends Component {
 
                                                             let image_url = Configs.SUB_CATEGORY_IMAGE_URL + item.image;
                                                             return (
+                                                                
+
+
                                                                 <>
                                                                     <TouchableOpacity
                                                                         key={item.id.toString()}
@@ -180,7 +183,7 @@ class GamesForTagAndSubCat extends Component {
                                                                                 resizeMode="contain"
                                                                             />
                                                                         ) : (
-                                                                            <CustomImage
+                                                                            <Image
                                                                                 source={{ uri: image_url }}
                                                                                 style={styles.galleryImg}
                                                                                 resizeMode="contain"

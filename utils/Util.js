@@ -125,7 +125,7 @@ export const removeUserData = async () => {
 export const showDateAsClientWant = (date, customStyle={}) => {
 	let m = moment(date);
 	return (
-		<Text style={[ {color: Colors.black, fontSize: 14, opacity: 0.8}, customStyle ]}>{`${m.format("Do")} `}{`${m.format("MMM")} ${m.format("YY")}`}<Text style={{fontSize: 10}}>{` (${m.format("ddd")}) `}</Text>  </Text>
+		<Text style={[ {color: Colors.grey, fontSize: 14, opacity: 0.8}, customStyle ]}>{`${m.format("Do")} `}{`${m.format("MMM")} ${m.format("YY")}`}<Text style={{fontSize: 10}}>{` (${m.format("ddd")}) `}</Text>  </Text>
 	)
 	// return m.format("D/MMM/YY (ddd)");
 }

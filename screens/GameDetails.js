@@ -37,6 +37,12 @@ export default class GameDetails extends React.Component {
 			activeTabKey: "A",
 			selectedGalleryImageIndex: 0,
 			isGalleryImageViewerOpen: false,
+			categoryID: '',
+			categoryName: '',
+			subCategoryID: '',
+			subCategoryName:''
+			
+			
 		};
 	}
 	componentDidMount = () => {
@@ -90,10 +96,14 @@ export default class GameDetails extends React.Component {
 			.then((response) => {
 				console.log('game_data', response.data);
 				this.setState({
-
 					data: response.data,
 					isLoading: false,
 					refreshing: false,
+				}, () => {
+					this.setState({
+						categoryID:this.state.data.parent_cat_id
+					})
+					console.log('games dtails data>>>>>>>>>>>>>>' , this.state.data)
 				});
 			})
 			.catch((err) => { });
@@ -155,12 +165,19 @@ export default class GameDetails extends React.Component {
 		});
 	}
 
+	
+		gotoEditGame = () => this.props.navigation.navigate("EditGame",
+		{
+			cat: { id: this.state.categoryID, name: this.state.categoryName },
+			sub_cat: { id: this.state.subCategoryID, name: this.state.subCategoryName },
+			game:this.state.data
 
+		});
+	
 	render = () => {
 		let url = "";
 
 		if (this.state.data.hasOwnProperty("game")) {
-
 			url = "https://ehostingguru.com/stage/funtoo/public/uploads/game/funtoo-6194cc0a0f0bd.jpg"
 
 		}
@@ -189,6 +206,7 @@ export default class GameDetails extends React.Component {
 				<Header
 					title={this.state.data.name}
 					addAction={this.toggleModal}
+					editAction={this.gotoEditGame}
 					gameDetailsIcon={true}
 					previous_game={this.state.data.previous_game}
 					next_game={this.state.data.next_game}

@@ -34,7 +34,7 @@ export default class Games extends React.Component {
 			categoryName: this.props.route.params?.cat?.name,
 			subCategoryID: this.props.route.params?.sub_cat?.id,
 			tag_id: this.props.route.params?.tag_id,
-			subCategoryName: this.props.route.params?.sub_cat?.name,
+			subCategoryName:this.props.route.params?.sub_cat?.name,
 			refreshing: false,
 		};
 	}
@@ -99,8 +99,7 @@ export default class Games extends React.Component {
 			cat: { id: this.state.categoryID, name: this.state.categoryName },
 			sub_cat: { id: this.state.subCategoryID, name: this.state.subCategoryName }
 		});
-
-
+	
 	renderEmptyContainer = () => {
 		return (
 			<EmptyScreen />
